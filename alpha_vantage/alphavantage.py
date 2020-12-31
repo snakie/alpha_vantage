@@ -363,8 +363,9 @@ class AlphaVantage(object):
                 raise ValueError(json_response["Note"])
             return json_response
         else:
-            csv_response = csv.reader(response.text.splitlines())
-            if not csv_response:
-                raise ValueError(
-                    'Error getting data from the api, no return was given.')
-            return csv_response
+            return response.text
+            #csv_response = csv.reader(response.text.splitlines())
+            #if not csv_response:
+            #    raise ValueError(
+            #        'Error getting data from the api, no return was given.')
+            #return csv_response
